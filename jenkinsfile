@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                sh '''
+                rm -d myfolder
+                ls
+                mkdir myfolder
+                cd myfolder
+                touch text.txt
+                ls
+                '''
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+      
+    }
+}
